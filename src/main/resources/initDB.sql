@@ -1,0 +1,28 @@
+DROP TABLE IF EXISTS usersCars;
+DROP TABLE IF EXISTS cars;
+DROP SEQUENCE IF EXISTS global_se8;
+DROP SEQUENCE IF EXISTS global_se9;
+/*DROP SEQUENCE IF EXISTS global_se10;*/
+
+CREATE SEQUENCE global_se8 START 10000;
+CREATE SEQUENCE global_se9 START 10000;
+/*CREATE SEQUENCE global_se10 START 100;*/
+
+CREATE TABLE usersCars(
+  userid INTEGER PRIMARY KEY DEFAULT nextval('global_se4'),
+  firstname VARCHAR NOT NULL,
+  lastname VARCHAR NOT NULL,
+  tel VARCHAR NOT NULL,
+  numberParking INTEGER NOT NULL
+);
+
+CREATE TABLE cars(
+  carid INTEGER PRIMARY KEY DEFAULT nextval('global_se6'),
+  userid INTEGER NOT NULL,
+  car VARCHAR NOT NULL,
+  modele VARCHAR NOT NULL,
+  timeArrival VARCHAR NOT NULL,
+  timeDeparture VARCHAR NOT NULL,
+  payment INTEGER NOT NULL
+  /* FOREIGN KEY (userid) REFERENCES users4(userid) ON DELETE CASCADE*/
+);
