@@ -14,7 +14,7 @@ public class DriverDao {
     private static Connection connection;
     private CarDao carDao;
 
-    private DriverDao(){
+    public DriverDao(){
        this.carDao = new CarDao();
        connection = DButil.getConnection();
     }
@@ -27,6 +27,16 @@ public class DriverDao {
            pr.setString(2,driver.getLastName());
            pr.setString(3,driver.getTel());
            pr.setInt(4,driver.getNumberParking());
+           pr.execute();
+       } catch (SQLException e) {
+           e.printStackTrace();
+       }
+   }
+   public void deleteDriver(int driverid){
+       try {
+           PreparedStatement pr = connection.prepareStatement("DELETE FROM userscars WHERE userid = ?");
+            pr.setInt(1, driverid);
+            pr.executeUpdate();
        } catch (SQLException e) {
            e.printStackTrace();
        }
