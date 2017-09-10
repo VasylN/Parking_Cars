@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-
+<jsp:forward page="/DriverController?action=listDriver"/>
 </body>
 </html>

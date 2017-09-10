@@ -24,13 +24,12 @@
                 </tr>
                 </thead>
             <tbody>
-            <c:forEach items="${driver}" var = "driver">
+            <c:forEach items="${driversCars}" var = "driver">
                 <tr>
                     <td><c:out value="${driver.driverid}"/></td>
                     <td><c:out value="${driver.firstName}"/></td>
                     <td><c:out value="${driver.lastName}"/></td>
                     <td><c:out value="${driver.tel}"/></td>
-                    <td><c:out value="${driver.numberParking}"/></td>
                     <td><a href="DriverController?action=edit&driverid=<c:out value="${driver.driverid}"/>">Update</a></td>
                     <td><a href="DriverController?action=delete&driverid=<c:out value="${driver.driverid}"/>">Delete</a></td>
                     <td><a href="CarController?action=review&driverid=<c:out value="${driver.driverid}"/>">Review list of cars</a></td>

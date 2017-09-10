@@ -10,7 +10,24 @@ public class Car {
     private String modeleCar;
     private int timeArrival;
     private int timeDeparture;
-   private int payment;
+    private int payment;
+    private int numberParking;
+
+    public int getCarid() {
+        return carid;
+    }
+
+    public void setCarid(int carid) {
+        this.carid = carid;
+    }
+
+    public int getDriverid() {
+        return driverid;
+    }
+
+    public void setDriverid(int driverid) {
+        this.driverid = driverid;
+    }
 
     public String getCarName() {
         return carName;
@@ -52,6 +69,14 @@ public class Car {
         this.payment = payment;
     }
 
+    public int getNumberParking() {
+        return numberParking;
+    }
+
+    public void setNumberParking(int numberParking) {
+        this.numberParking = numberParking;
+    }
+
     @Override
     public String toString() {
         return "Car{" +
@@ -60,6 +85,7 @@ public class Car {
                 ", timeArrival=" + timeArrival +
                 ", timeDeparture=" + timeDeparture +
                 ", payment=" + payment +
+                ", numberParking=" + numberParking +
                 '}';
     }
 }

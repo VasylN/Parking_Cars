@@ -12,8 +12,7 @@ CREATE TABLE usersCars(
   userid INTEGER PRIMARY KEY DEFAULT nextval('global_se4'),
   firstname VARCHAR NOT NULL,
   lastname VARCHAR NOT NULL,
-  tel VARCHAR NOT NULL,
-  numberParking INTEGER NOT NULL
+  tel VARCHAR NOT NULL
 );
 
 CREATE TABLE cars(
@@ -23,6 +22,6 @@ CREATE TABLE cars(
   modele VARCHAR NOT NULL,
   timeArrival VARCHAR NOT NULL,
   timeDeparture VARCHAR NOT NULL,
-  payment INTEGER NOT NULL
-  /* FOREIGN KEY (userid) REFERENCES users4(userid) ON DELETE CASCADE*/
+  payment INTEGER NOT NULL,
+  numberParking INTEGER NOT NULL
 );

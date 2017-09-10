@@ -8,7 +8,7 @@ public class Driver {
     private String firstName;
     private String lastName;
     private String tel;
-    private int numberParking;
+
 
     public int getDriverid() {
         return driverid;
@@ -42,13 +42,6 @@ public class Driver {
         this.tel = tel;
     }
 
-    public int getNumberParking() {
-        return numberParking;
-    }
-
-    public void setNumberParking(int numberParking) {
-        this.numberParking = numberParking;
-    }
 
     @Override
     public String toString() {
@@ -56,7 +49,6 @@ public class Driver {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", tel='" + tel + '\'' +
-                ", numberParking=" + numberParking +
-                '}';
+                              '}';
     }
 }

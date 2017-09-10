@@ -13,6 +13,17 @@
     <title>Title</title>
 </head>
 <body>
-
+<form method="post" action="DriverController" name="formAddDriverCar">
+    User ID : <input type="text" readonly="readonly" name="userid"
+                     value="<c:out value="${driver.driverid}"/>"/> <br/>
+    First name : <input type="text" name="firstName"
+                        value="<c:out value="${driver.firstName}"/>"/> <br/>
+    Last name : <input type="text" name="lastName"
+                       value="<c:out value="${driver.lastName}"/>"/> <br/>
+    Tel : <input type="text" name="tel"
+                 value="<c:out value="${driver.tel}"/>"/> <br/>
+      <input type="submit" value="ok">
+    <p><a href="DriverController?action=listDriver">Back</a></p>
+</form>
 </body>
 </html>
