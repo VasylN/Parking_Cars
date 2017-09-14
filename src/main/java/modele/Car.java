@@ -8,10 +8,10 @@ public class Car {
     private int driverid;
     private String carName;
     private String modeleCar;
-    private int timeArrival;
-    private int timeDeparture;
-    private int payment;
-    private int numberParking;
+    private String timeArrival;
+    private String timeDeparture;
+    private String payment;
+    private String numberParking;
 
     public int getCarid() {
         return carid;
@@ -45,47 +45,49 @@ public class Car {
         this.modeleCar = modeleCar;
     }
 
-    public int getTimeArrival() {
+    public String getTimeArrival() {
         return timeArrival;
     }
 
-    public void setTimeArrival(int timeArrival) {
+    public void setTimeArrival(String timeArrival) {
         this.timeArrival = timeArrival;
     }
 
-    public int getTimeDeparture() {
+    public String getTimeDeparture() {
         return timeDeparture;
     }
 
-    public void setTimeDeparture(int timeDeparture) {
+    public void setTimeDeparture(String timeDeparture) {
         this.timeDeparture = timeDeparture;
     }
 
-    public int getPayment() {
+    public String getPayment() {
         return payment;
     }
 
-    public void setPayment(int payment) {
+    public void setPayment(String payment) {
         this.payment = payment;
     }
 
-    public int getNumberParking() {
+    public String getNumberParking() {
         return numberParking;
     }
 
-    public void setNumberParking(int numberParking) {
+    public void setNumberParking(String numberParking) {
         this.numberParking = numberParking;
     }
 
     @Override
     public String toString() {
         return "Car{" +
-                "carName='" + carName + '\'' +
+                "carid=" + carid +
+                ", driverid=" + driverid +
+                ", carName='" + carName + '\'' +
                 ", modeleCar='" + modeleCar + '\'' +
-                ", timeArrival=" + timeArrival +
-                ", timeDeparture=" + timeDeparture +
-                ", payment=" + payment +
-                ", numberParking=" + numberParking +
+                ", timeArrival='" + timeArrival + '\'' +
+                ", timeDeparture='" + timeDeparture + '\'' +
+                ", payment='" + payment + '\'' +
+                ", numberParking='" + numberParking + '\'' +
                 '}';
     }
 }
