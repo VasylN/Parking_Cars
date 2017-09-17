@@ -29,11 +29,13 @@
     <tbody>
     <c:forEach items="${cars}" var="car">
         <tr>
+            <td><c:out value="${car.carid}"/></td>
             <td><c:out value="${car.carName}"/></td>
             <td><c:out value="${car.modeleCar}"/></td>
             <td><c:out value="${car.timeArrival}"/></td>
             <td><c:out value="${car.timeDeparture}"/></td>
             <td><c:out value="${car.payment}"/></td>
+            <td><c:out value="${car.numberParking}"/></td>
             <td><a href="CarController?action=edit&carid<c:out value="${car.carid}"/>">Update</a></td>
             <td><a href="CarController?action=delete&carid=<c:out value="${car.carid}"/>">Delete</a></td>
         </tr>

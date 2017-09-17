@@ -34,6 +34,12 @@ public class DriverController extends HttpServlet {
         } else if (action.equalsIgnoreCase("listDriver")) {
             forward = LIST_DRIVER;
             req.setAttribute("driversCars", dao.getAllDrivers());
+        } else if (action.equalsIgnoreCase("edit")) {
+            forward = INSERT_OR_EDIT;
+            int driverid = Integer.parseInt("userid");
+            Driver driver = dao.getDriverById(driverid);
+            req.setAttribute("user", driver);
+            req.setAttribute("userid", driverid);
         } else {
             forward = INSERT_OR_EDIT;
         }
@@ -47,7 +53,7 @@ public class DriverController extends HttpServlet {
         driver.setFirstName(req.getParameter("firstName"));
         driver.setLastName(req.getParameter("lastName"));
         driver.setTel(req.getParameter("tel"));
-        String driverid = req.getParameter("userid");
+        String driverid = req.getParameter("driverid");
         if (driverid == null || driverid.isEmpty()) {
             dao.addDriver(driver);
         } else {

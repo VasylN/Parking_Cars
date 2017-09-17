@@ -44,8 +44,8 @@ public class CarController extends HttpServlet {
             req.setAttribute("car", car);
         } else if (action.equalsIgnoreCase("listCar")) {
             forward = LIST_CAR;
-            int driverid = Integer.parseInt(req.getParameter("driverid"));
-            req.setAttribute("cars", dao.getCarsByDriverId(driverid));
+            int userid = Integer.parseInt(req.getParameter("userid"));
+            req.setAttribute("cars", dao.getCarsByDriverId(userid));
         } else {
             forward = UPDATE_CAR;
         }
@@ -61,8 +61,6 @@ public class CarController extends HttpServlet {
         car.setTimeArrival(req.getParameter("timeArrival"));
         car.setTimeDeparture(req.getParameter("timeDeparture"));
         car.setPayment(req.getParameter("payment"));
-
-
         String carid = req.getParameter("carid");
         if (carid == null || carid.isEmpty()) {
             dao.addCar(car);

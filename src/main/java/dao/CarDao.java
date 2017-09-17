@@ -29,7 +29,7 @@ public class CarDao {
 
         List<Car> carList = new ArrayList<Car>();
         try {
-            PreparedStatement pr = connection.prepareStatement("SELECT * FROM cars WHERE carid = ?");
+            PreparedStatement pr = connection.prepareStatement("SELECT * FROM cars WHERE userid = ?");
             pr.setInt(1, cacheDriverId);
             ResultSet rs = pr.executeQuery();
             while (rs.next()) {
@@ -39,6 +39,7 @@ public class CarDao {
                 car.setTimeArrival(rs.getString("timeArrival"));
                 car.setTimeDeparture(rs.getString("timeDeparture"));
                 car.setPayment(rs.getString("payment"));
+                car.setCarid(rs.getInt("carid"));
                 carList.add(car);
             }
         } catch (SQLException e) {
